@@ -78,43 +78,8 @@
                   <li class="nav-item">
                     <a class="ud-menu-scroll" href="#contact">Kontakt</a>
                   </li>
-                  <li class="nav-item nav-item-has-children">
-                    <a href="javascript:void(0)"> Pages </a>
-                    <ul class="ud-submenu">
-                      <li class="ud-submenu-item">
-                        <a href="about.html" class="ud-submenu-link">
-                          About Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="pricing.html" class="ud-submenu-link">
-                          Pricing Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="contact.html" class="ud-submenu-link">
-                          Contact Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="blog.html" class="ud-submenu-link">
-                          Blog Grid Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="blog-details.html" class="ud-submenu-link">
-                          Blog Details Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="login.html" class="ud-submenu-link">
-                          Sign In Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="404.html" class="ud-submenu-link">404 Page</a>
-                      </li>
-                    </ul>
+                  <li class="nav-item">
+                    <a href="./blog.html"> Blog </a>
                   </li>
                 </ul>
               </div>
@@ -260,7 +225,7 @@
             </div>
           </div>
           <div class="ud-about-image">
-            <img src="assets/images/about/about.jpg" alt="about-image" />
+            <img src="assets/images/about/about.jpg" alt="about-image" style="border-radius: 1rem;"/>
           </div>
         </div>
       </div>
@@ -507,7 +472,7 @@
               </div>
               <div class="ud-team-info">
                 <h5>Simone Travnik</h5>
-                <h6>Stv. Schriftführerin</h6>
+                <h6>Stv. Schriftführer</h6>
               </div>
               <ul class="ud-team-socials">
                 <li>
@@ -540,10 +505,10 @@
           <div class="col-xl-8 col-lg-7">
             <div class="ud-contact-content-wrapper">
               <div class="ud-contact-title">
-                <span>CONTACT US</span>
+                <span>Kontakt</span>
                 <h2>
-                  Let’s talk about <br />
-                  Love to hear from you!
+                  Willst du mitmachen?<br />
+                  Kontaktier uns gerne!
                 </h2>
               </div>
               <div class="ud-contact-info-wrapper">
@@ -552,8 +517,8 @@
                     <i class="lni lni-map-marker"></i>
                   </div>
                   <div class="ud-info-meta">
-                    <h5>Our Location</h5>
-                    <p>401 Broadway, 24th Floor, Orchard Cloud View, London</p>
+                    <h5>Hier sind wir zu finden</h5>
+                    <p>Jugendzentrum Fischamend<br>Enzersdorfer Straße 32<br>2401 Fischamend</p>
                   </div>
                 </div>
                 <div class="ud-single-info">
@@ -561,9 +526,8 @@
                     <i class="lni lni-envelope"></i>
                   </div>
                   <div class="ud-info-meta">
-                    <h5>How Can We Help?</h5>
-                    <p>info@yourdomain.com</p>
-                    <p>contact@yourdomain.com</p>
+                    <h5>Schreib uns gerne eine Mail</h5>
+                    <a href="mailto:kontakt@fischamender-jugend.at">kontakt@fischamender-jugend.at</a>
                   </div>
                 </div>
               </div>
@@ -574,14 +538,17 @@
               class="ud-contact-form-wrapper wow fadeInUp"
               data-wow-delay=".2s"
             >
-              <h3 class="ud-contact-form-title">Send us a Message</h3>
-              <form class="ud-contact-form">
+              <h3 class="ud-contact-form-title">Schreib uns eine Nachricht</h3>
+              <form class="ud-contact-form" action="https://formkeep.com/f/1b3b0216e63f"
+              accept-charset="UTF-8"
+              enctype="multipart/form-data"
+              method="POST">
                 <div class="ud-form-group">
-                  <label for="fullName">Full Name*</label>
+                  <label for="fullName">Vorname Nachname*</label>
                   <input
                     type="text"
                     name="fullName"
-                    placeholder="Adam Gelius"
+                    placeholder="Max Mustermann"
                   />
                 </div>
                 <div class="ud-form-group">
@@ -589,28 +556,28 @@
                   <input
                     type="email"
                     name="email"
-                    placeholder="example@yourmail.com"
+                    placeholder="beispiel@deinemail.com"
                   />
                 </div>
                 <div class="ud-form-group">
-                  <label for="phone">Phone*</label>
+                  <label for="phone">Telefonnummer*</label>
                   <input
                     type="text"
                     name="phone"
-                    placeholder="+885 1254 5211 552"
+                    placeholder="+43 660 683552"
                   />
                 </div>
                 <div class="ud-form-group">
-                  <label for="message">Message*</label>
+                  <label for="message">Nachricht*</label>
                   <textarea
                     name="message"
                     rows="1"
-                    placeholder="type your message here"
+                    placeholder="Schreib hier deine Nachricht"
                   ></textarea>
                 </div>
                 <div class="ud-form-group mb-0">
                   <button type="submit" class="ud-main-btn">
-                    Send Message
+                    Senden
                   </button>
                 </div>
               </form>
@@ -638,11 +605,10 @@
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="ud-widget">
                 <a href="index.html" class="ud-footer-logo">
-                  <img src="assets/images/logo/logo.svg" alt="logo" />
+                  <img src="assets/images/logo/logo.png" alt="logo" />
                 </a>
                 <p class="ud-widget-desc">
-                  We create digital experiences for brands and companies by
-                  using technology.
+                  Ein Jugendverein für soziale und kulturelle Projekte in Fischamend
                 </p>
                 <ul class="ud-widget-socials">
                   <li>
@@ -671,77 +637,31 @@
 
             <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
               <div class="ud-widget">
-                <h5 class="ud-widget-title">About Us</h5>
+                <h5 class="ud-widget-title">Quick Links</h5>
                 <ul class="ud-widget-links">
                   <li>
-                    <a href="javascript:void(0)">Home</a>
+                    <a href="#home">Home</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">Features</a>
+                    <a href="#features">Visionen</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">About</a>
+                    <a href="#team">Vorstand</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">Testimonial</a>
+                    <a href="#contact">Kontakt</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
               <div class="ud-widget">
-                <h5 class="ud-widget-title">Features</h5>
+                <h5 class="ud-widget-title">Impressum</h5>
                 <ul class="ud-widget-links">
-                  <li>
-                    <a href="javascript:void(0)">How it works</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Privacy policy</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Terms of service</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Refund policy</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
-              <div class="ud-widget">
-                <h5 class="ud-widget-title">Our Products</h5>
-                <ul class="ud-widget-links">
-                  <li>
-                    <a
-                      href="https://lineicons.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Lineicons
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://ecommercehtml.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Ecommerce HTML</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://ayroui.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Ayro UI</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://graygrids.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Plain Admin</a
-                    >
+                  <li style="color: white;">
+                    Tobias Rigler<br>
+                    Enzersdorfer Straße 32<br>
+                    2401 Fischamend
                   </li>
                 </ul>
               </div>
@@ -831,23 +751,11 @@
       <div class="ud-footer-bottom">
         <div class="container">
           <div class="row">
-            <div class="col-md-8">
-              <ul class="ud-footer-bottom-left">
-                <li>
-                  <a href="javascript:void(0)">Privacy policy</a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">Support policy</a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">Terms of service</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-4">
+            <div>
               <p class="ud-footer-bottom-right">
                 Designed and Developed by
-                <a href="https://uideck.com" rel="nofollow">UIdeck</a>
+                <a href="https://uideck.com" rel="nofollow">UIdeck</a><br>
+                Changes made by Tobias Rigler
               </p>
             </div>
           </div>

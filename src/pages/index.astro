@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const latestPosts = posts.slice(0, 3);
+---
+
+<Layout title="Fischamender Jugend – Von der Jugend für die Jugend!">
+  <!-- Hero -->
+  <section id="home" class="club-gradient text-white">
+    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          Fischamender Jugend
+        </h1>
+        <p class="text-xl md:text-2xl text-club-yellow font-semibold mt-2">
+          Von der Jugend für die Jugend!
+        </p>
+        <p class="mt-4 text-white/85 text-lg">
+          Ein Verein für soziale und kulturelle Projekte in Fischamend
+        </p>
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a
+            href={`${base}blog`}
+            class="inline-block bg-club-yellow text-club-dark font-semibold px-6 py-3 rounded-full hover:bg-white transition-colors"
+          >
+            Zu den Events
+          </a>
+          <a
+            href={`${base}ueber-uns`}
+            class="inline-block border-2 border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white hover:text-club-blue transition-colors"
+          >
+            Über uns
+          </a>
+        </div>
+      </div>
+      <div>
+        <img
+          src={`${base}images/hero/hero.jpg`}
+          alt="Fischamender Jugend"
+          class="rounded-2xl shadow-xl w-full h-auto object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Aktuelles / Blog teaser -->
+  <section id="events" class="max-w-6xl mx-auto px-4 py-20">
+    <div class="text-center mb-12">
+      <span class="text-club-blue font-semibold uppercase tracking-wide text-sm">Aktuelles</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2">Unsere Events</h2>
+      <p class="text-slate-600 mt-2">Schau dir an, was wir alles erleben und erreichen!</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {latestPosts.map((post) => (
+        <a href={`${base}blog/${post.id}`} class="group block rounded-2xl overflow-hidden border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="aspect-video overflow-hidden">
+            <img
+              src={post.data.image}
+              alt={post.data.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs text-club-blue font-semibold">
+              {post.data.date.toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" })}
+            </span>
+            <h3 class="text-lg font-semibold mt-1">{post.data.title}</h3>
+            <p class="text-sm text-slate-600 mt-2 line-clamp-3">{post.data.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-10">
+      <a href={`${base}blog`} class="inline-block border-2 border-club-blue text-club-blue font-semibold px-6 py-3 rounded-full hover:bg-club-blue hover:text-white transition-colors">
+        Alle Events ansehen
+      </a>
+    </div>
+  </section>
+
+  <!-- Teaser cards to other pages -->
+  <section class="bg-slate-50 py-20">
+    <div class="max-w-3xl mx-auto px-4 grid sm:grid-cols-2 gap-6">
+      <a href={`${base}ueber-uns`} class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+        <h3 class="text-xl font-semibold mb-2">Über uns</h3>
+        <p class="text-sm text-slate-600">Wer wir sind, was wir wollen und welche Visionen wir für Fischamend haben.</p>
+      </a>
+      <a href={`${base}vorstand`} class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+        <h3 class="text-xl font-semibold mb-2">Vorstand</h3>
+        <p class="text-sm text-slate-600">Lerne die Menschen kennen, die die Fischamender Jugend leiten.</p>
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fischamender-jugend.at/sitemap-index.xml

@@ -1,0 +1,58 @@
+---
+const base = import.meta.env.BASE_URL;
+const path = Astro.url.pathname;
+
+const navItems = [
+  { href: `${base}ueber-uns`, label: "Über uns" },
+  { href: `${base}vorstand`, label: "Vorstand" },
+  { href: `${base}blog`, label: "Blog" },
+  { href: `${base}kontakt`, label: "Kontakt" },
+];
+
+const isActive = (href: string) => {
+  const normalized = href.replace(/\/$/, "");
+  const currentPath = path.replace(/\/$/, "");
+  return currentPath === normalized || (normalized !== base.replace(/\/$/, "") && currentPath.startsWith(normalized));
+};
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+  <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href={base} class="flex items-center gap-2 shrink-0">
+      <img src={`${base}images/logo/logo.png`} alt="Fischamender Jugend Logo" class="h-10 w-auto" width="40" height="40" decoding="async" />
+    </a>
+
+    <button id="menu-toggle" class="lg:hidden p-2 text-club-dark" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <ul class="hidden lg:flex items-center gap-6 font-medium text-club-dark text-sm">
+      {navItems.map((item) => (
+        <li>
+          <a href={item.href} class={`hover:text-club-blue transition-colors ${isActive(item.href) ? "text-club-blue" : ""}`}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <ul id="mobile-menu" class="hidden lg:hidden flex-col gap-1 px-4 pb-4 font-medium text-club-dark">
+    {navItems.map((item) => (
+      <li>
+        <a href={item.href} class="block py-2 hover:text-club-blue transition-colors">{item.label}</a>
+      </li>
+    ))}
+  </ul>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.toggle("flex");
+    menu?.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(!!isOpen));
+  });
+</script>
+

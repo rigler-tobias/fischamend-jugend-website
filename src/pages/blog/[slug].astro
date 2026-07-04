@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const base = import.meta.env.BASE_URL;
+const images = post.data.images && post.data.images.length > 0 ? post.data.images : [post.data.image];
+---
+
+<Layout title={`${post.data.title} | Fischamender Jugend`} description={post.data.description}>
+  <article class="max-w-3xl mx-auto px-4 py-16">
+    <a href={`${base}blog`} class="text-sm text-club-blue hover:underline mb-6 inline-block">← Zurück zu allen Events</a>
+
+    <img
+      src={post.data.image}
+      alt={post.data.title}
+      class="w-full aspect-video object-cover rounded-2xl mb-8"
+    />
+
+    <p class="text-sm text-club-blue font-semibold mb-2">
+      {post.data.date.toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" })}
+    </p>
+    <h1 class="text-3xl md:text-4xl font-bold mb-6">{post.data.title}</h1>
+
+    <div class="prose max-w-none prose-a:text-club-blue">
+      <Content />
+    </div>
+
+    {images.length > 1 && (
+      <div class="grid sm:grid-cols-2 gap-4 mt-10">
+        {images.slice(1).map((img) => (
+          <img src={img} alt={post.data.title} class="w-full h-56 object-cover rounded-xl" loading="lazy" />
+        ))}
+      </div>
+    )}
+  </article>
+</Layout>

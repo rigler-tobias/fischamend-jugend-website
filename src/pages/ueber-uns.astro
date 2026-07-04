@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { visionen } from "../data/content";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Über uns | Fischamender Jugend"
+  description="Wer wir sind, was wir wollen und welche Visionen die Fischamender Jugend für unsere Gemeinde hat."
+>
+  <section class="club-gradient text-white py-16 text-center">
+    <h1 class="text-4xl font-bold">Über uns</h1>
+    <p class="mt-3 text-white/85 max-w-xl mx-auto px-4">
+      Von der Jugend für die Jugend – ein Verein für soziale und kulturelle Projekte in Fischamend.
+    </p>
+  </section>
+
+  <!-- Story -->
+  <section class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <span class="text-club-blue font-semibold uppercase tracking-wide text-sm">Unsere Geschichte</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Fischamender Jugend</h2>
+      <p class="text-slate-600 leading-relaxed">
+        Wir sind ein Verbund aus jungen Leuten und wollen seit vielen Jahren schon etwas bewegen in
+        unserer Heimatgemeinde. Nun haben wir den Entschluss gefasst einen Verein zu gründen und
+        endlich unseren Traum wahr werden zu lassen.
+      </p>
+      <p class="text-slate-600 leading-relaxed mt-4">
+        Mit diesem Verein wollen wir soziale und kulturelle Projekte umsetzen, welche für die
+        gesamte Gemeinde Vorteile bringt. Weiters wollen wir Events von der Jugend für die Jugend
+        planen und auch mit anderen Jugendvereinen kooperieren um gegenseitig voneinander zu lernen.
+      </p>
+      <p class="text-slate-600 leading-relaxed mt-4">
+        Seit unserer Gründung haben wir gemeinsam mit der Stadtgemeinde Fischamend und befreundeten
+        Vereinen zahlreiche Veranstaltungen auf die Beine gestellt – von Punschständen über
+        sportliche Turniere bis hin zu geselligen Sommer-Events. Jeder Erfolg motiviert uns, noch
+        mehr für unsere Gemeinde zu tun.
+      </p>
+      <a href={`${base}blog`} class="inline-block mt-6 text-club-blue font-semibold hover:underline">
+        Schau dir unsere bisherigen Events an →
+      </a>
+    </div>
+    <div>
+      <img src={`${base}images/about/about.jpg`} alt="Fischamender Jugend Team" class="rounded-2xl shadow-xl w-full h-auto object-cover" />
+    </div>
+  </section>
+
+  <!-- Visionen -->
+  <section class="bg-slate-50 py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-club-blue font-semibold uppercase tracking-wide text-sm">Pläne</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2">Unsere Visionen</h2>
+        <p class="text-slate-600 mt-2">Wir haben viele Ideen und planen Großes für die Zukunft!</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {visionen.map((v) => (
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center">
+            <div class="w-12 h-12 mx-auto rounded-full bg-club-yellow/20 flex items-center justify-center mb-4">
+              <span class="w-3 h-3 rounded-full bg-club-blue"></span>
+            </div>
+            <h3 class="font-semibold text-lg">{v.title}</h3>
+            <p class="text-sm text-slate-600 mt-2">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="max-w-4xl mx-auto px-4 py-20">
+    <div class="text-center mb-12">
+      <span class="text-club-blue font-semibold uppercase tracking-wide text-sm">Werte</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2">Wofür wir stehen</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6 text-slate-600">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <h3 class="font-semibold text-club-dark mb-2">Gemeinschaft</h3>
+        <p>Wir bringen junge Menschen in Fischamend zusammen und schaffen einen Ort, an dem jede und jeder mitgestalten kann.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <h3 class="font-semibold text-club-dark mb-2">Ehrenamt</h3>
+        <p>Alle unsere Projekte werden ehrenamtlich von engagierten Vereinsmitgliedern in ihrer Freizeit umgesetzt.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <h3 class="font-semibold text-club-dark mb-2">Regionalität</h3>
+        <p>Wir setzen uns aktiv für unsere Heimatgemeinde ein und arbeiten eng mit lokalen Vereinen und der Stadtgemeinde zusammen.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <h3 class="font-semibold text-club-dark mb-2">Offenheit</h3>
+        <p>Bei uns ist jede und jeder willkommen, unabhängig von Herkunft oder Vorerfahrung – Hauptsache Lust auf Mitgestalten.</p>
+      </div>
+    </div>
+    <div class="text-center mt-12">
+      <a href={`${base}kontakt`} class="inline-block bg-club-blue text-white font-semibold px-6 py-3 rounded-full hover:bg-club-blue-dark transition-colors">
+        Werde Teil der Fischamender Jugend
+      </a>
+    </div>
+  </section>
+</Layout>

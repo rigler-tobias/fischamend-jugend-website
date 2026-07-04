@@ -1,0 +1,14 @@
+---
+title: "3. Fischamender Jugend Punschstand"
+date: 2025-12-07
+image: "/images/events/event_09_punschstand3/IMG_1028.JPG"
+images:
+  - "/images/events/event_09_punschstand3/IMG_1028.JPG"
+  - "/images/events/event_09_punschstand3/IMG_1034.JPG"
+  - "/images/events/event_09_punschstand3/IMG_1433.JPG"
+  - "/images/events/event_09_punschstand3/IMG_1436.JPG"
+  - "/images/events/event_09_punschstand3/IMG_1416.JPG"
+description: "Bei winterlichen Temperaturen haben wir unseren Punschstand veranstaltet. Ein richtig gemütlicher Abend."
+---
+
+Bei winterlichen Temperaturen haben wir unseren Punschstand veranstaltet. Mit warmem Punsch, guter Stimmung und vielen netten Gesprächen war es ein richtig gemütlicher Abend.

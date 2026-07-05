@@ -1,12 +1,13 @@
 import sharp from "sharp";
-import { readdirSync, statSync, unlinkSync } from "node:fs";
-import { join, extname, basename } from "node:path";
+import { readdirSync, statSync, mkdirSync, renameSync } from "node:fs";
+import { join, extname, basename, relative, dirname } from "node:path";
 
 const ROOT = new URL("../public/images", import.meta.url).pathname;
+const ORIGINALS_ROOT = new URL("../originals", import.meta.url).pathname;
 const EXTS = [".jpg", ".jpeg", ".png", ".JPG", ".JPEG", ".PNG"];
 const SKIP_DIRS = ["logo"]; // keep logo.png as-is (referenced directly as favicon/PNG)
-const MAX_WIDTH = 1600;
-const QUALITY = 78;
+const MAX_WIDTH = 1800;
+const QUALITY = 86;
 
 function walk(dir, files = []) {
   for (const entry of readdirSync(dir)) {
@@ -41,7 +42,12 @@ for (const file of files) {
   const after = statSync(webpPath).size;
   totalBefore += before;
   totalAfter += after;
-  unlinkSync(file);
+
+  // Move (not delete) the original into ./originals, mirroring the folder structure,
+  // so it never ships with the site but stays available locally if needed later.
+  const originalDest = join(ORIGINALS_ROOT, relative(ROOT, file));
+  mkdirSync(dirname(originalDest), { recursive: true });
+  renameSync(file, originalDest);
 
   console.log(
     `${basename(file)} -> ${basename(webpPath)}  ${(before / 1024).toFixed(0)}KB -> ${(after / 1024).toFixed(0)}KB`
@@ -51,3 +57,4 @@ for (const file of files) {
 console.log(
   `\nDone. Total: ${(totalBefore / 1024 / 1024).toFixed(2)}MB -> ${(totalAfter / 1024 / 1024).toFixed(2)}MB`
 );
+console.log(`Originals moved to: ${ORIGINALS_ROOT}`);

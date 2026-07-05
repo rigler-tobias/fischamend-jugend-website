@@ -70,7 +70,7 @@ const latestPosts = posts.slice(0, 3);
         >
           <div class="aspect-video overflow-hidden border-b-2 border-club-dark">
             <img
-              src={post.data.image}
+              src={post.data.image ?? "/images/placeholder-event.svg"}
               alt={post.data.title}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               loading="lazy"

@@ -1,9 +1,9 @@
 ---
 title: "Punschstand"
 date: 2023-12-08
-image: "/images/events/event_06/image_01.jpg"
+image: "/images/events/event_06/image_01.webp"
 images:
-  - "/images/events/event_06/image_01.jpg"
+  - "/images/events/event_06/image_01.webp"
 description: "Kommt alle zu unserem Punschstand am 8.12. vorbei. Wir sorgen für euer leibliches Wohl."
 ---
 

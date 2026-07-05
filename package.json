@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "optimize-images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@fontsource/fredoka": "^5.2.10",
@@ -23,7 +24,8 @@
     "tailwindcss": "4.2.2"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.7.2"
+    "@astrojs/sitemap": "^3.7.2",
+    "sharp": "^0.34.5"
   },
   "overrides": {
     "vite": "^7"

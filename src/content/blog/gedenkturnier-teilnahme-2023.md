@@ -1,9 +1,9 @@
 ---
 title: "Fischamender Jugend nimmt am 25.11. beim Gedenkturnier teil!"
 date: 2023-11-25
-image: "/images/events/event_07/image_01.jpg"
+image: "/images/events/event_07/image_01.webp"
 images:
-  - "/images/events/event_07/image_01.jpg"
+  - "/images/events/event_07/image_01.webp"
 description: "Wir werden zum ersten Mal ein Team beim Gedenkturnier stellen."
 ---
 

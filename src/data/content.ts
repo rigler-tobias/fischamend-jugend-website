@@ -6,12 +6,12 @@ export interface TeamMember {
 }
 
 export const team: TeamMember[] = [
-  { name: "Tobias Rigler", role: "Präsident", image: "rigler.jpeg", instagram: "tobi.rigler" },
-  { name: "Maximilian Jäger", role: "Kassier", image: "jaeger.jpg", instagram: "freedom._.jaeger" },
-  { name: "Fabian Zeugswetter", role: "Schriftführer", image: "zeugswetter.jpeg", instagram: "zeugsi_2412" },
-  { name: "Alexander Hiermann", role: "Präsident Stellvertreter", image: "hiermann.png", instagram: "alex.hier" },
-  { name: "Christoph Blizenetz", role: "Kassier Stellvertreter", image: "blizenetz.png", instagram: "christoph_blitz" },
-  { name: "Simone Travnik", role: "Schriftführer Stellvertreterin", image: "travnik.jpg", instagram: "simone.sophiee" },
+  { name: "Tobias Rigler", role: "Präsident", image: "rigler.webp", instagram: "tobi.rigler" },
+  { name: "Maximilian Jäger", role: "Kassier", image: "jaeger.webp", instagram: "freedom._.jaeger" },
+  { name: "Fabian Zeugswetter", role: "Schriftführer", image: "zeugswetter.webp", instagram: "zeugsi_2412" },
+  { name: "Alexander Hiermann", role: "Präsident Stellvertreter", image: "hiermann.webp", instagram: "alex.hier" },
+  { name: "Christoph Blizenetz", role: "Kassier Stellvertreter", image: "blizenetz.webp", instagram: "christoph_blitz" },
+  { name: "Simone Travnik", role: "Schriftführer Stellvertreterin", image: "travnik.webp", instagram: "simone.sophiee" },
 ];
 
 export interface Vision {

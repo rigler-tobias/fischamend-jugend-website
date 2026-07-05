@@ -17,9 +17,49 @@ const images = post.data.images && post.data.images.length > 0 ? post.data.image
 const mapsUrl = post.data.location
   ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(post.data.location)}`
   : null;
+
+const siteOrigin = (Astro.site ?? new URL("https://fischamender-jugend.at")).origin;
+const eventDateStr = post.data.date.toISOString().slice(0, 10);
+const eventEndDateStr =
+  post.data.endTime && post.data.startTime && post.data.endTime < post.data.startTime
+    ? new Date(`${eventDateStr}T00:00:00Z`).valueOf() + 86400000
+    : null;
+const eventEndDate = eventEndDateStr
+  ? new Date(eventEndDateStr).toISOString().slice(0, 10)
+  : eventDateStr;
+const eventJsonLd = post.data.startTime
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      name: post.data.title,
+      description: post.data.description,
+      startDate: `${eventDateStr}T${post.data.startTime}:00+02:00`,
+      ...(post.data.endTime && {
+        endDate: `${eventEndDate}T${post.data.endTime}:00+02:00`,
+      }),
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      eventStatus: "https://schema.org/EventScheduled",
+      image: [new URL(post.data.image, siteOrigin).toString()],
+      location: post.data.location
+        ? {
+            "@type": "Place",
+            name: post.data.location,
+            address: post.data.location,
+          }
+        : undefined,
+      organizer: {
+        "@type": "Organization",
+        name: "Fischamender Jugend",
+        url: siteOrigin,
+      },
+    }
+  : null;
 ---
 
-<Layout title={`${post.data.title} | Fischamender Jugend`} description={post.data.description}>
+<Layout title={`${post.data.title} | Fischamender Jugend`} description={post.data.description} image={post.data.image}>
+  {eventJsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(eventJsonLd)} />
+  )}
   <article class="max-w-3xl mx-auto px-4 py-16">
     <a href={`${base}blog`} class="text-sm text-club-blue hover:underline mb-6 inline-block">← Zurück zu allen Events</a>
 

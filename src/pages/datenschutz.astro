@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
   title="Datenschutzerklärung | Fischamender Jugend"
   description="Datenschutzerklärung des Vereins Fischamender Jugend gemäß Art. 13 DSGVO."
 >
-  <section class="bg-club-blue text-white py-16 text-center">
+  <section class="bg-club-blue-dark text-white py-16 text-center">
     <h1 class="text-4xl font-bold">Datenschutzerklärung</h1>
     <p class="mt-3 text-white/85 max-w-xl mx-auto px-4">
       Informationen zur Verarbeitung personenbezogener Daten gemäß Art. 13, 14 DSGVO
@@ -78,29 +78,48 @@ import Layout from "../layouts/Layout.astro";
     <section>
       <h2 class="text-xl font-semibold text-club-dark mb-3">5. Eingebundene Karte (Google Maps)</h2>
       <p class="mb-3">
-        Auf unserer Kontaktseite binden wir eine Karte von <strong>Google Maps</strong> (Google
-        Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) ein, um unseren Standort
-        anzuzeigen. Beim Laden der Kontaktseite wird dabei eine Verbindung zu Servern von Google
-        hergestellt und deine IP-Adresse an Google übermittelt; dies kann eine Übermittlung in die
-        USA einschließen.
+        Auf unserer Kontaktseite bieten wir optional eine Karte von <strong>Google Maps</strong> (Google
+        Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) an, um unseren Standort
+        anzuzeigen. Die Karte wird <strong>nicht automatisch beim Aufruf der Seite geladen</strong>,
+        sondern erst, wenn du aktiv auf den Button „Karte laden“ klickst. Erst dann wird eine
+        Verbindung zu Servern von Google hergestellt und deine IP-Adresse an Google übermittelt;
+        dies kann eine Übermittlung in die USA einschließen. Deine Entscheidung wird lokal in
+        deinem Browser gespeichert (<code class="bg-slate-100 px-1 rounded">localStorage</code>),
+        damit die Karte bei einem erneuten Besuch nicht nochmal bestätigt werden muss.
       </p>
       <div class="bg-club-yellow/10 border border-club-yellow/40 rounded-xl p-4 text-sm">
-        Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer
-        anschaulichen Standortdarstellung). Weitere Informationen findest du in der
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung durch aktiven Klick auf
+        „Karte laden“). Ohne diesen Klick findet keine Verbindung zu Google statt. Weitere
+        Informationen findest du in der
         <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-club-blue hover:underline">Datenschutzerklärung von Google</a>.
       </div>
     </section>
 
     <section>
-      <h2 class="text-xl font-semibold text-club-dark mb-3">6. Cookies</h2>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">6. Instagram-Verlinkung</h2>
       <p>
-        Diese Website setzt keine Tracking- oder Analyse-Cookies ein. Es werden ausschließlich
-        technisch notwendige Daten verarbeitet, wie unter Punkt 3 beschrieben.
+        An mehreren Stellen verlinken wir auf unser Instagram-Profil
+        (<a href="https://www.instagram.com/fischamender.jugend/" target="_blank" rel="noopener noreferrer" class="text-club-blue hover:underline">@fischamender.jugend</a>).
+        Dabei handelt es sich um einen einfachen Link, kein eingebettetes Plugin – es werden dadurch
+        keine Daten an Instagram/Meta übermittelt, solange du den Link nicht anklickst. Erst mit dem
+        Klick verlässt du unsere Website und die Datenschutzbestimmungen von Instagram gelten.
       </p>
     </section>
 
     <section>
-      <h2 class="text-xl font-semibold text-club-dark mb-3">7. Schriftarten</h2>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">7. Cookies</h2>
+      <p>
+        Diese Website setzt selbst keine Cookies ein und verwendet keine Tracking- oder
+        Analyse-Tools. Es werden ausschließlich technisch notwendige Server-Logdaten verarbeitet
+        (siehe Punkt 3). Cookies von Google können ausschließlich dann gesetzt werden, wenn du
+        aktiv die Google-Maps-Karte unter Punkt 5 lädst. Da wir mangels eigener Cookies bzw.
+        vergleichbarer Technologien keine Einwilligung für den generellen Website-Besuch benötigen,
+        verzichten wir auf einen Cookie-Banner.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">8. Schriftarten</h2>
       <p>
         Die auf dieser Website verwendete Schriftart ("Poppins") wird lokal ausgeliefert
         (Self-Hosting über @fontsource). Es findet keine Verbindung zu Google Fonts oder anderen
@@ -109,7 +128,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section>
-      <h2 class="text-xl font-semibold text-club-dark mb-3">8. Deine Rechte</h2>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">9. Deine Rechte</h2>
       <p class="mb-3">Du hast im Rahmen der DSGVO folgende Rechte, sofern die jeweiligen Voraussetzungen vorliegen:</p>
       <ul class="list-disc pl-6 space-y-1">
         <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
@@ -127,7 +146,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section>
-      <h2 class="text-xl font-semibold text-club-dark mb-3">9. Beschwerderecht bei der Aufsichtsbehörde</h2>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">10. Beschwerderecht bei der Aufsichtsbehörde</h2>
       <p>
         Du hast das Recht, dich bei der österreichischen Datenschutzbehörde zu beschweren, wenn du
         der Ansicht bist, dass die Verarbeitung deiner personenbezogenen Daten gegen die DSGVO

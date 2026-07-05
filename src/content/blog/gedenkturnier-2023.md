@@ -1,10 +1,10 @@
 ---
 title: "4. Michael Kugler Gedenkturnier"
 date: 2023-11-27
-image: "/images/events/event_01/image_01.png"
+image: "/images/events/event_01/image_01.webp"
 images:
-  - "/images/events/event_01/image_01.png"
-  - "/images/events/event_01/image_02.png"
+  - "/images/events/event_01/image_01.webp"
+  - "/images/events/event_01/image_02.webp"
 description: "Wir haben den 3. Platz erreicht und sind damit am Stockerl."
 ---
 

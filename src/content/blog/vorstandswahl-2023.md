@@ -1,9 +1,9 @@
 ---
 title: "Unser Vorstand wurde gewählt!"
 date: 2023-11-19
-image: "/images/events/event_05/image_01.jpeg"
+image: "/images/events/event_05/image_01.webp"
 images:
-  - "/images/events/event_05/image_01.jpeg"
+  - "/images/events/event_05/image_01.webp"
 description: "Der Vorstand der Fischamender Jugend wurde bei der Jugendkonferenz einstimmig gewählt."
 ---
 

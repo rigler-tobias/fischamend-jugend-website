@@ -1,10 +1,10 @@
 ---
 title: "Afterwork Spritzerstand"
 date: 2025-05-22
-image: "/images/events/event_04/image_01.png"
+image: "/images/events/event_04/image_01.webp"
 images:
-  - "/images/events/event_04/image_01.png"
-  - "/images/events/event_04/image_02.png"
+  - "/images/events/event_04/image_01.webp"
+  - "/images/events/event_04/image_02.webp"
 description: "Wir denken immer noch gern zurück an unseren legendären Spritzerstand. Ein echtes Highlight der Fischamender Jugend."
 ---
 

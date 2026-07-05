@@ -10,9 +10,12 @@ const posts = (await getCollection("blog")).sort(
 const latestPosts = posts.slice(0, 3);
 ---
 
-<Layout title="Fischamender Jugend – Von der Jugend für die Jugend!">
+<Layout
+  title="Fischamender Jugend – Von der Jugend für die Jugend!"
+  image="/images/hero/hero.webp"
+>
   <!-- Hero -->
-  <section id="home" class="relative bg-club-blue text-white overflow-hidden">
+  <section id="home" class="relative bg-club-blue-dark text-white overflow-hidden">
     <div class="blob w-72 h-72 bg-club-yellow/20 -top-10 -left-16"></div>
     <div class="blob w-96 h-96 bg-white/10 -bottom-20 -right-20"></div>
     <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
@@ -41,8 +44,10 @@ const latestPosts = posts.slice(0, 3);
       </div>
       <div class="relative">
         <img
-          src={`${base}images/hero/hero.jpg`}
+          src={`${base}images/hero/hero.webp`}
           alt="Fischamender Jugend"
+          width="1206"
+          height="492"
           class="tilt-1 rounded-2xl border-4 border-white shadow-2xl w-full h-auto object-cover"
         />
       </div>
@@ -108,5 +113,25 @@ const latestPosts = posts.slice(0, 3);
         <p class="text-sm text-slate-600">Kein Fest und keine Aktion mehr verpassen – alle Termine auf einen Blick.</p>
       </a>
     </div>
+  </section>
+
+  <!-- Instagram CTA -->
+  <section class="max-w-3xl mx-auto px-4 py-20 text-center">
+    <span class="badge-sticker">Folg uns</span>
+    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4">Immer am Laufenden bleiben</h2>
+    <p class="text-slate-600 mb-8">
+      Die schönsten Momente, Behind-the-Scenes und Ankündigungen findest du auf Instagram. Schau vorbei und folg uns!
+    </p>
+    <a
+      href="https://www.instagram.com/fischamender.jugend/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-chunky bg-club-yellow text-club-dark px-6 py-3 inline-flex items-center gap-2"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+        <path d="M12 2.2c3.2 0 3.6 0 4.9.07 3.3.15 4.8 1.7 5 5 .06 1.3.07 1.6.07 4.8s0 3.6-.07 4.9c-.15 3.3-1.7 4.8-5 5-1.3.06-1.6.07-4.9.07s-3.6 0-4.9-.07c-3.3-.15-4.8-1.7-5-5C2.03 15.6 2 15.3 2 12s0-3.6.07-4.9c.15-3.3 1.7-4.85 5-5C8.4 2.2 8.7 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-2.4.1-3.5 1.2-3.6 3.6-.06 1.2-.07 1.5-.07 4.7s0 3.5.07 4.7c.1 2.4 1.2 3.5 3.6 3.6 1.2.06 1.5.07 4.7.07s3.5 0 4.7-.07c2.4-.1 3.5-1.2 3.6-3.6.06-1.2.07-1.5.07-4.7s0-3.5-.07-4.7c-.1-2.4-1.2-3.5-3.6-3.6C15.5 4 15.1 4 12 4zm0 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm4.9-2.5a1.08 1.08 0 1 1 0 2.16 1.08 1.08 0 0 1 0-2.16z" />
+      </svg>
+      @fischamender.jugend
+    </a>
   </section>
 </Layout>

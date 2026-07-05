@@ -43,7 +43,10 @@ h3 {
 
 /* Chunky hard-shadow button, "sticker" style */
 .btn-chunky {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   font-weight: 700;
   border-radius: 999px;
   border: 2.5px solid var(--color-club-dark);

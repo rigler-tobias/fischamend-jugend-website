@@ -1,0 +1,129 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+);
+
+const events = posts.map((post) => ({
+  id: post.id,
+  title: post.data.title,
+  date: post.data.date.toISOString().slice(0, 10),
+  startTime: post.data.startTime ?? null,
+  endTime: post.data.endTime ?? null,
+  location: post.data.location ?? null,
+}));
+---
+
+<Layout
+  title="Eventkalender | Fischamender Jugend"
+  description="Alle Termine und Events der Fischamender Jugend auf einen Blick."
+>
+  <section class="bg-club-blue text-white py-16 text-center">
+    <h1 class="text-4xl font-bold">Eventkalender</h1>
+    <p class="mt-3 text-white/85 max-w-xl mx-auto px-4">
+      Alle vergangenen und kommenden Termine der Fischamender Jugend.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 py-16">
+    <div
+      id="calendar"
+      class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6"
+      data-base={base}
+      data-events={JSON.stringify(events)}
+    >
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { Calendar } from "@fullcalendar/core";
+  import dayGridPlugin from "@fullcalendar/daygrid";
+  import listPlugin from "@fullcalendar/list";
+  import deLocale from "@fullcalendar/core/locales/de";
+
+  const el = document.getElementById("calendar") as HTMLElement;
+  const base = el.dataset.base ?? "/";
+  const events = JSON.parse(el.dataset.events ?? "[]") as {
+    id: string;
+    title: string;
+    date: string;
+    startTime: string | null;
+    endTime: string | null;
+    location: string | null;
+  }[];
+
+  function addDays(dateStr: string, days: number) {
+    const d = new Date(`${dateStr}T00:00:00`);
+    d.setDate(d.getDate() + days);
+    return d.toISOString().slice(0, 10);
+  }
+
+  const calendarEvents = events.map((e) => {
+    if (!e.startTime) {
+      return {
+        id: e.id,
+        title: e.title,
+        start: e.date,
+        allDay: true,
+        url: `${base}blog/${e.id}`,
+      };
+    }
+
+    const start = `${e.date}T${e.startTime}:00`;
+    let end: string | undefined;
+    if (e.endTime) {
+      const endDate = e.endTime < e.startTime ? addDays(e.date, 1) : e.date;
+      end = `${endDate}T${e.endTime}:00`;
+    }
+
+    return {
+      id: e.id,
+      title: e.title,
+      start,
+      end,
+      allDay: false,
+      url: `${base}blog/${e.id}`,
+    };
+  });
+
+  const calendar = new Calendar(el, {
+    plugins: [dayGridPlugin, listPlugin],
+    initialView: window.innerWidth < 640 ? "listMonth" : "dayGridMonth",
+    locale: deLocale,
+    height: "auto",
+    headerToolbar: {
+      left: "prev,next today",
+      center: "title",
+      right: "dayGridMonth,listMonth",
+    },
+    buttonText: {
+      today: "Heute",
+      month: "Monat",
+      list: "Liste",
+    },
+    eventTimeFormat: {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    },
+    events: calendarEvents,
+    eventClick: (info) => {
+      info.jsEvent.preventDefault();
+      window.location.href = info.event.url;
+    },
+    eventDidMount: (info) => {
+      const event = events.find((e) => e.id === info.event.id);
+      const parts = [info.event.title];
+      if (event?.location) parts.push(`📍 ${event.location}`);
+      info.el.title = parts.join(" – ");
+    },
+    dayMaxEvents: 2,
+  });
+
+  calendar.render();
+</script>

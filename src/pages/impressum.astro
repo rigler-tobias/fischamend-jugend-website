@@ -1,0 +1,113 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Impressum | Fischamender Jugend"
+  description="Offenlegung gemäß § 25 Mediengesetz für den Verein Fischamender Jugend."
+>
+  <section class="bg-club-blue text-white py-16 text-center">
+    <h1 class="text-4xl font-bold">Impressum</h1>
+    <p class="mt-3 text-white/85 max-w-xl mx-auto px-4">
+      Offenlegung gemäß § 25 Mediengesetz (MedienG)
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 py-16 space-y-10 text-slate-700 leading-relaxed">
+    <section>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">Medieninhaber und Herausgeber</h2>
+      <address class="not-italic">
+        <strong>Fischamender Jugend – zukunftsorientierte Projektgestaltung</strong> (Verein)<br />
+        Sitz: Fischamend<br />
+        Fehrgasse 1/5/3<br />
+        2401 Fischamend<br />
+        Österreich
+      </address>
+      <ul class="mt-3 space-y-1">
+        <li><strong>ZVR-Zahl:</strong> 1193618126</li>
+        <li><strong>Vertretungsbefugtes Organ (Präsident):</strong> Tobias Rigler</li>
+        <li>
+          <strong>E-Mail:</strong>
+          <a href="mailto:kontakt@fischamender-jugend.at" class="text-club-blue hover:underline">kontakt@fischamender-jugend.at</a>
+        </li>
+      </ul>
+      <p class="mt-3 text-sm text-slate-500">
+        Angaben gemäß Vereinsregisterauszug der Zentralen Vereinsregisters (ZVR), Stichtag 05.07.2026.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">Vereinszweck (§ 25 Abs. 2 MedienG)</h2>
+      <p>
+        Der Verein Fischamender Jugend verfolgt gemäß seinen Statuten die Förderung sozialer und
+        kultureller Projekte für junge Menschen in Fischamend sowie die Organisation von Events
+        und Kooperationen mit anderen Jugendvereinen. Diese Website dient der Information der
+        Öffentlichkeit über Vereinsaktivitäten, Veranstaltungen und Projekte ("Grundlegende
+        Richtung" im Sinne des § 25 Abs. 2 MedienG).
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">Zuständige Vereinsbehörde</h2>
+      <p>
+        Bezirkshauptmannschaft Bruck an der Leitha (Vereinsbehörde gemäß Vereinsgesetz 2002,
+        BGBl. I Nr. 66/2002 idgF).
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">Urheberrecht</h2>
+      <p>
+        Alle auf dieser Website veröffentlichten Inhalte, Texte, Bilder und Grafiken sind, sofern
+        nicht anders gekennzeichnet, Eigentum des Vereins Fischamender Jugend bzw. seiner
+        Mitglieder und urheberrechtlich geschützt (§ 1 UrhG). Eine Vervielfältigung, Bearbeitung
+        oder Verbreitung außerhalb der Grenzen des Urheberrechts bedarf der vorherigen
+        schriftlichen Zustimmung.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">
+        Nutzungsvorbehalt für Text- und Data-Mining (KI-Training)
+      </h2>
+      <p class="mb-3">
+        Hiermit widerspricht der Verein Fischamender Jugend ausdrücklich jeder Nutzung der auf
+        dieser Website veröffentlichten Inhalte (Texte, Bilder, sonstige Werke) durch automatisierte
+        Verfahren zum Text- und Data-Mining im Sinne des § 42h UrhG bzw. Art. 4 der Richtlinie (EU)
+        2019/790 (DSM-Richtlinie), insbesondere zum Zweck des Trainings, Fine-Tunings oder Betriebs
+        von KI-Systemen und Sprachmodellen ("KI-Training").
+      </p>
+      <p>
+        Dieser Nutzungsvorbehalt gilt sowohl in maschinenlesbarer Form (siehe
+        <code class="bg-slate-100 px-1 rounded">robots.txt</code>) als auch als ausdrückliche
+        Erklärung im Sinne des Art. 4 Abs. 3 DSM-Richtlinie. Eine Nutzung der Inhalte zu den oben
+        genannten Zwecken ist nur nach vorheriger schriftlicher Zustimmung des Vereins gestattet.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">Haftungsausschluss</h2>
+      <p class="mb-3">
+        Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die
+        Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir dennoch keine Gewähr
+        übernehmen.
+      </p>
+      <p>
+        Diese Website enthält Links zu externen Websites Dritter (z. B. Instagram, Google Maps),
+        auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte können wir daher
+        keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige
+        Anbieter oder Betreiber verantwortlich.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-club-dark mb-3">Datenschutz</h2>
+      <p>
+        Informationen zur Verarbeitung personenbezogener Daten finden Sie in unserer
+        <a href={`${base}datenschutz`} class="text-club-blue hover:underline">Datenschutzerklärung</a>.
+      </p>
+    </section>
+  </section>
+</Layout>

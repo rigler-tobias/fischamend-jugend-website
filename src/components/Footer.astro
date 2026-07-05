@@ -2,7 +2,7 @@
 const base = import.meta.env.BASE_URL;
 ---
 
-<footer class="club-gradient text-white mt-24">
+<footer class="bg-club-dark text-white mt-24">
   <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-3 gap-10">
     <div>
       <a href={base} class="inline-block mb-3">
@@ -20,23 +20,29 @@ const base = import.meta.env.BASE_URL;
         <li><a href={`${base}ueber-uns`} class="hover:text-club-yellow transition-colors">Über uns</a></li>
         <li><a href={`${base}vorstand`} class="hover:text-club-yellow transition-colors">Vorstand</a></li>
         <li><a href={`${base}blog`} class="hover:text-club-yellow transition-colors">Blog</a></li>
+        <li><a href={`${base}kalender`} class="hover:text-club-yellow transition-colors">Kalender</a></li>
         <li><a href={`${base}kontakt`} class="hover:text-club-yellow transition-colors">Kontakt</a></li>
       </ul>
     </div>
 
     <div>
-      <h5 class="font-semibold text-club-yellow mb-3">Impressum</h5>
+      <h5 class="font-semibold text-club-yellow mb-3">Kontakt</h5>
       <p class="text-sm text-white/80 leading-relaxed">
-        Tobias Rigler<br />
+        Jugendzentrum Fischamend<br />
         Enzersdorfer Straße 32<br />
         2401 Fischamend
       </p>
+      <a href="mailto:kontakt@fischamender-jugend.at" class="text-sm text-white/80 hover:text-club-yellow transition-colors inline-block mt-2">
+        kontakt@fischamender-jugend.at
+      </a>
     </div>
   </div>
 
   <div class="border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 py-4 text-xs text-white/60 text-center">
-      &copy; {new Date().getFullYear()} Fischamender Jugend
+    <div class="max-w-6xl mx-auto px-4 py-4 text-xs text-white/60 text-center flex flex-wrap justify-center gap-x-4 gap-y-1">
+      <span>&copy; {new Date().getFullYear()} Fischamender Jugend</span>
+      <a href={`${base}impressum`} class="hover:text-club-yellow transition-colors">Impressum</a>
+      <a href={`${base}datenschutz`} class="hover:text-club-yellow transition-colors">Datenschutz</a>
     </div>
   </div>
 </footer>

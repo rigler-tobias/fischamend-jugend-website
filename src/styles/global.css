@@ -37,6 +37,46 @@ body {
   top: 0;
 }
 
-.club-gradient {
-  background: linear-gradient(135deg, var(--color-club-blue) 0%, var(--color-club-dark) 100%);
+/* FullCalendar theming to match Vereinsfarben */
+.fc {
+  --fc-border-color: #e2e8f0;
+  --fc-page-bg-color: #ffffff;
+  --fc-neutral-bg-color: #f8fafc;
+  --fc-list-event-hover-bg-color: #f1f5f9;
+  --fc-today-bg-color: rgba(247, 220, 74, 0.18);
+  --fc-button-bg-color: #4191d8;
+  --fc-button-border-color: #4191d8;
+  --fc-button-hover-bg-color: #2f6fae;
+  --fc-button-hover-border-color: #2f6fae;
+  --fc-button-active-bg-color: #2f6fae;
+  --fc-button-active-border-color: #2f6fae;
+  --fc-event-bg-color: #4191d8;
+  --fc-event-border-color: #4191d8;
+  font-family: var(--font-display);
+}
+
+.fc .fc-toolbar-title {
+  color: #1c2431;
+  font-weight: 600;
+}
+
+.fc .fc-button {
+  text-transform: capitalize;
+  box-shadow: none !important;
+}
+
+.fc .fc-daygrid-day-number,
+.fc .fc-col-header-cell-cushion {
+  color: #1c2431;
+}
+
+.fc .fc-daygrid-event {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fc .fc-daygrid-event .fc-event-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

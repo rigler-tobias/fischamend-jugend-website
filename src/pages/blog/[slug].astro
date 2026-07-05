@@ -14,6 +14,9 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const base = import.meta.env.BASE_URL;
 const images = post.data.images && post.data.images.length > 0 ? post.data.images : [post.data.image];
+const mapsUrl = post.data.location
+  ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(post.data.location)}`
+  : null;
 ---
 
 <Layout title={`${post.data.title} | Fischamender Jugend`} description={post.data.description}>
@@ -28,8 +31,28 @@ const images = post.data.images && post.data.images.length > 0 ? post.data.image
 
     <p class="text-sm text-club-blue font-semibold mb-2">
       {post.data.date.toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" })}
+      {post.data.startTime && (
+        <>
+          {" · "}
+          {post.data.startTime} Uhr{post.data.endTime && ` – ${post.data.endTime} Uhr`}
+        </>
+      )}
     </p>
-    <h1 class="text-3xl md:text-4xl font-bold mb-6">{post.data.title}</h1>
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">{post.data.title}</h1>
+
+    {post.data.location && (
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="text-slate-600 text-sm">📍 {post.data.location}</span>
+        <a
+          href={mapsUrl!}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block text-sm border-2 border-club-blue text-club-blue font-semibold px-4 py-1.5 rounded-full hover:bg-club-blue hover:text-white transition-colors"
+        >
+          Route anzeigen
+        </a>
+      </div>
+    )}
 
     <div class="prose max-w-none prose-a:text-club-blue">
       <Content />

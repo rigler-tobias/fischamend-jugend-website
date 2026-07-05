@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.6",
+    "@fullcalendar/core": "^6.1.21",
+    "@fullcalendar/daygrid": "^6.1.21",
+    "@fullcalendar/list": "^6.1.21",
     "@tailwindcss/typography": "0.5.19",
     "@tailwindcss/vite": "4.2.2",
     "astro": "6.1.5",

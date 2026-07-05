@@ -9,15 +9,19 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Layout title="Blog | Fischamender Jugend" description="Alle Events und Berichte der Fischamender Jugend.">
-  <section class="bg-club-blue text-white py-16 text-center">
-    <h1 class="text-4xl font-bold">Fischamender Jugend Events</h1>
+  <section class="relative bg-club-blue text-white py-16 text-center overflow-hidden">
+    <div class="blob w-64 h-64 bg-club-yellow/20 -bottom-16 -right-10"></div>
+    <h1 class="relative text-4xl font-bold">Fischamender Jugend Events</h1>
+    <p class="relative mt-3 text-white/85 max-w-xl mx-auto px-4">
+      Alle unsere Geschichten, Erfolge und lustigsten Momente – von Punschstand bis Wastedparty.
+    </p>
   </section>
 
   <section class="max-w-6xl mx-auto px-4 py-16">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {posts.map((post) => (
-        <a href={`${base}blog/${post.id}`} class="group block rounded-2xl overflow-hidden border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="aspect-video overflow-hidden">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map((post, i) => (
+        <a href={`${base}blog/${post.id}`} class={`card-sticker group block bg-white overflow-hidden ${i % 2 === 0 ? "tilt-1" : "tilt-2"}`}>
+          <div class="aspect-video overflow-hidden border-b-2 border-club-dark">
             <img
               src={post.data.image}
               alt={post.data.title}
@@ -26,10 +30,10 @@ const posts = (await getCollection("blog")).sort(
             />
           </div>
           <div class="p-5">
-            <span class="text-xs text-club-blue font-semibold">
+            <span class="text-xs text-club-blue font-bold uppercase tracking-wide">
               {post.data.date.toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" })}
             </span>
-            <h2 class="text-lg font-semibold mt-1">{post.data.title}</h2>
+            <h2 class="font-heading text-lg font-semibold mt-1">{post.data.title}</h2>
             <p class="text-sm text-slate-600 mt-2 line-clamp-3">{post.data.description}</p>
           </div>
         </a>

@@ -8,6 +8,7 @@
   --color-club-blue-dark: #2f6fae;
   --color-club-dark: #1c2431;
   --font-display: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-heading: "Fredoka", "Poppins", system-ui, -apple-system, sans-serif;
 }
 
 html {
@@ -16,6 +17,93 @@ html {
 
 body {
   font-family: var(--font-display);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+/* Sticker badge – small rotated pill used as section "eyebrow" label */
+.badge-sticker {
+  display: inline-block;
+  background: var(--color-club-yellow);
+  color: var(--color-club-dark);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 2.5px solid var(--color-club-dark);
+  transform: rotate(-2deg);
+  box-shadow: 3px 3px 0 var(--color-club-dark);
+}
+
+/* Chunky hard-shadow button, "sticker" style */
+.btn-chunky {
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 2.5px solid var(--color-club-dark);
+  box-shadow: 4px 4px 0 var(--color-club-dark);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-chunky:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-club-dark);
+}
+
+.btn-chunky:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--color-club-dark);
+}
+
+.btn-chunky-white {
+  border-color: #fff;
+  box-shadow: 4px 4px 0 #fff;
+}
+
+.btn-chunky-white:hover {
+  box-shadow: 6px 6px 0 #fff;
+}
+
+.btn-chunky-white:active {
+  box-shadow: 2px 2px 0 #fff;
+}
+
+/* Sticker card – thick outline + hard offset shadow, gently rotated */
+.card-sticker {
+  border: 2.5px solid var(--color-club-dark);
+  border-radius: 1.25rem;
+  box-shadow: 6px 6px 0 var(--color-club-dark);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-sticker:hover {
+  transform: translate(-3px, -3px) rotate(0deg) !important;
+  box-shadow: 9px 9px 0 var(--color-club-dark);
+}
+
+.tilt-1 {
+  transform: rotate(-1.5deg);
+}
+
+.tilt-2 {
+  transform: rotate(1.5deg);
+}
+
+.tilt-3 {
+  transform: rotate(-1deg);
+}
+
+/* Decorative blob shapes */
+.blob {
+  position: absolute;
+  border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  z-index: 0;
 }
 
 /* Skip to content link (accessibility) */

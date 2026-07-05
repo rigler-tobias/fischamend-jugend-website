@@ -2,7 +2,7 @@
 const base = import.meta.env.BASE_URL;
 ---
 
-<footer class="bg-club-dark text-white mt-24">
+<footer class="bg-club-dark text-white mt-24 border-t-4 border-club-yellow">
   <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-3 gap-10">
     <div>
       <a href={base} class="inline-block mb-3">
@@ -14,22 +14,22 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <div>
-      <h5 class="font-semibold text-club-yellow mb-3">Quick Links</h5>
+      <h5 class="font-heading font-semibold text-club-yellow mb-3">Quick Links</h5>
       <ul class="space-y-2 text-sm text-white/80">
         <li><a href={base} class="hover:text-club-yellow transition-colors">Home</a></li>
-        <li><a href={`${base}ueber-uns`} class="hover:text-club-yellow transition-colors">Über uns</a></li>
-        <li><a href={`${base}vorstand`} class="hover:text-club-yellow transition-colors">Vorstand</a></li>
         <li><a href={`${base}blog`} class="hover:text-club-yellow transition-colors">Blog</a></li>
         <li><a href={`${base}kalender`} class="hover:text-club-yellow transition-colors">Kalender</a></li>
         <li><a href={`${base}kontakt`} class="hover:text-club-yellow transition-colors">Kontakt</a></li>
+        <li><a href={`${base}ueber-uns`} class="hover:text-club-yellow transition-colors">Über uns</a></li>
+        <li><a href={`${base}vorstand`} class="hover:text-club-yellow transition-colors">Vorstand</a></li>
       </ul>
     </div>
 
     <div>
-      <h5 class="font-semibold text-club-yellow mb-3">Kontakt</h5>
+      <h5 class="font-heading font-semibold text-club-yellow mb-3">Kontakt</h5>
       <p class="text-sm text-white/80 leading-relaxed">
-        Jugendzentrum Fischamend<br />
-        Enzersdorfer Straße 32<br />
+        Jugendzentrum Fischamend,<br />
+        Enzersdorfer Straße 32,<br />
         2401 Fischamend
       </p>
       <a href="mailto:kontakt@fischamender-jugend.at" class="text-sm text-white/80 hover:text-club-yellow transition-colors inline-block mt-2">

@@ -26,7 +26,7 @@ const mapsUrl = post.data.location
     <img
       src={post.data.image}
       alt={post.data.title}
-      class="w-full aspect-video object-cover rounded-2xl mb-8"
+      class="tilt-1 w-full aspect-video object-cover rounded-2xl border-4 border-club-dark shadow-2xl mb-8"
     />
 
     <p class="text-sm text-club-blue font-semibold mb-2">
@@ -47,7 +47,7 @@ const mapsUrl = post.data.location
           href={mapsUrl!}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block text-sm border-2 border-club-blue text-club-blue font-semibold px-4 py-1.5 rounded-full hover:bg-club-blue hover:text-white transition-colors"
+          class="btn-chunky bg-club-blue text-white text-sm px-4 py-1.5"
         >
           Route anzeigen
         </a>

@@ -2,6 +2,7 @@
 title: "Wastedparty"
 date: 2026-07-18
 image: "/images/events/event_11_wasted_party_announce/flyer.webp"
+isFlyer: true
 images:
   - "/images/events/event_11_wasted_party_announce/image1.webp"
 description: "Die Fischamender Jugend Wasted Party steht vor der Tür! Am 18. Juli 2026 von 21:00 bis 03:00 Uhr feiern wir gemeinsam eine unvergessliche Nacht."

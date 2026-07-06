@@ -8,6 +8,8 @@ images:
   - "/images/events/event_07/image_01.webp"
 description: "Wir haben den 3. Platz erreicht und sind damit am Stockerl."
 location: "Sporthalle Fischamend"
+flyerImages:
+  - "/images/events/event_07/image_01.webp"
 ---
 
 Am 25.11. fand das 4. Michael Kugler Gedenkturnier statt, bei dem wir zum ersten Mal mit einem eigenen Team der Fischamender Jugend angetreten sind. Wir haben uns auf forderende Duelle gefreut und wollten vor allem eines: gemeinsam Spaß haben und als Verein zusammenwachsen.

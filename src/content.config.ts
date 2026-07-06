@@ -12,6 +12,8 @@ const blog = defineCollection({
     startTime: z.string().optional(),
     endTime: z.string().optional(),
     location: z.string().optional(),
+    isFlyer: z.boolean().optional(),
+    flyerImages: z.array(z.string()).optional(),
   }),
 });
 

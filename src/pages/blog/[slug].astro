@@ -65,11 +65,21 @@ const eventJsonLd = post.data.startTime
   <article class="max-w-3xl mx-auto px-4 py-16">
     <a href={`${base}blog`} class="text-sm text-club-blue hover:underline mb-6 inline-block">← Zurück zu allen Events</a>
 
-    <img
-      src={mainImage}
-      alt={post.data.title}
-      class="tilt-1 w-full aspect-video object-cover rounded-2xl border-4 border-club-dark shadow-2xl mb-8"
-    />
+    {post.data.isFlyer ? (
+      <div class="tilt-1 w-full max-h-[70vh] flex items-center justify-center bg-slate-100 rounded-2xl border-4 border-club-dark shadow-2xl mb-8 p-3">
+        <img
+          src={mainImage}
+          alt={post.data.title}
+          class="max-h-[65vh] w-auto object-contain rounded-lg"
+        />
+      </div>
+    ) : (
+      <img
+        src={mainImage}
+        alt={post.data.title}
+        class="tilt-1 w-full aspect-video object-cover rounded-2xl border-4 border-club-dark shadow-2xl mb-8"
+      />
+    )}
 
     <p class="text-sm text-club-blue font-semibold mb-2">
       {post.data.date.toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" })}
@@ -103,7 +113,13 @@ const eventJsonLd = post.data.startTime
     {images.length > 1 && (
       <div class="grid sm:grid-cols-2 gap-4 mt-10">
         {images.slice(1).map((img) => (
-          <img src={img} alt={post.data.title} class="w-full h-56 object-cover rounded-xl" loading="lazy" />
+          post.data.flyerImages?.includes(img) ? (
+            <div class="w-full h-56 bg-slate-100 rounded-xl flex items-center justify-center p-2">
+              <img src={img} alt={post.data.title} class="max-h-full max-w-full object-contain rounded-lg" loading="lazy" />
+            </div>
+          ) : (
+            <img src={img} alt={post.data.title} class="w-full h-56 object-cover rounded-xl" loading="lazy" />
+          )
         ))}
       </div>
     )}
